@@ -208,8 +208,10 @@ class TheSpaghettiDetectivePlugin(
     def main_loop(self):
         global _print_event_tracker
 
+        _logger.debug("Before entering get_tags")
         get_tags()  # init tags to minimize risk of race condition
 
+        _logger.debug("Before entering wait_for_auth_token")
         self.user_account = self.wait_for_auth_token().get('user', DEFAULT_USER_ACCOUNT)
         self.sentry.user_context({'id': self.auth_token()})
         _logger.info('User account: {}'.format(self.user_account))

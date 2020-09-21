@@ -166,6 +166,7 @@ tags_mutex = threading.RLock()
 def get_tags():
     global system_tags, tags_mutex
 
+    _logger.debug("Entered get_tags")
     with tags_mutex:
         if system_tags:
             return system_tags
@@ -180,6 +181,7 @@ def get_tags():
     except:
         pass
 
+    _logger.debug(tags)
     try:
         usb = run("lsusb | cut -d ' ' -f 7- | grep -vE ' hub| Hub' | grep -v 'Standard Microsystems Corp'", stdout=Capture())
         usb_out = ''.join(usb.stdout.text).replace('\n', '')
@@ -188,6 +190,7 @@ def get_tags():
     except:
         pass
 
+    _logger.debug(tags)
     with tags_mutex:
         system_tags = tags
         return system_tags
