@@ -194,7 +194,9 @@ class TheSpaghettiDetectivePlugin(
     # ~~Startup Plugin
 
     def on_after_startup(self):
+        _logger.debug('Entered on_after_startup')
         not_using_pi_camera()
+        _logger.debug('Before creating thread for main_loop')
         main_thread = threading.Thread(target=self.main_loop)
         main_thread.daemon = True
         main_thread.start()
@@ -392,9 +394,11 @@ class TheSpaghettiDetectivePlugin(
 
     @backoff.on_predicate(backoff.expo, max_value=1200)
     def wait_for_auth_token(self):
+        _logger.debug("Entered wait_for_auth_token")
         while not self.is_configured():
             time.sleep(1)
 
+        _logger.debug("Trying to verify auth_token")
         succeeded, _, resp = self.tsd_api_status()
         if succeeded:
             return resp.json()
