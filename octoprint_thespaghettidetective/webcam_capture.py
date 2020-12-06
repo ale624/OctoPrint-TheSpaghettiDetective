@@ -22,9 +22,9 @@ import requests
 import backoff
 
 
-POST_PIC_INTERVAL_SECONDS = 0.3
+POST_PIC_INTERVAL_SECONDS = 1
 if os.environ.get('DEBUG'):
-    POST_PIC_INTERVAL_SECONDS = 0.3
+    POST_PIC_INTERVAL_SECONDS = 0.5
 
 _logger = logging.getLogger('octoprint.plugins.thespaghettidetective')
 
