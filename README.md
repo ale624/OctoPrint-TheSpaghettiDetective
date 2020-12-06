@@ -1,5 +1,7 @@
 # The Spaghetti Detective Plugin - Print With Peace Of Mind
 
+The only thing i've ajusted is the snapshot upload interval. down to 1 second
+
 [The Spaghetti Detective](https://www.thespaghettidetective.com) is a Machine Learning-based algorithm to automatically detects 3D print failures, send you alerts, and let you cancel prints from anywhere.
 
 This plugin requires The Spaghetti Detective server to work. You can grab the server source code from [The Spaghetti Detective server github repo](https://github.com/TheSpaghettiDetective/TheSpaghettiDetective) and get it up and running. If you don't want the hassle of setting up and running your own server, you can [sign up a The Spaghetti Detective cloud account](https://www.thespaghettidetective.com/accounts/signup/).
@@ -9,7 +11,7 @@ This plugin requires The Spaghetti Detective server to work. You can grab the se
 Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wiki/Plugin:-Plugin-Manager)
 or manually using this URL:
 
-    https://github.com/TheSpaghettiDetective/OctoPrint-TheSpaghettiDetective/archive/master.zip
+    https://github.com/ale624/OctoPrint-TheSpaghettiDetective/archive/master.zip
 
 ## Configuration
 
